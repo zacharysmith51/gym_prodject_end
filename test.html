@@ -1,0 +1,28 @@
+<div class="thumbnail" id="paparazzixxx">
+    <a class="playback" href="#">
+        <img id="play" src="../resources/images/image_test.png" />
+    </a>
+    <audio autoplay controls id="paparazzi">
+        <source src="../resources/audio/audio_test.mp3" type="audio/mpeg"/>
+        Your browser does not support HTML5 audio.
+    </audio>
+</div>
+<script type="text/javascript">
+   $(function() {
+     $(".playback").click(function(e) {
+       e.preventDefault();
+
+       // This next line will get the audio element
+       // that is adjacent to the link that was clicked.
+       var song = $(this).next('audio').get(0);
+       if (song.paused)
+         song.play();
+       else
+         song.pause();
+     });
+   });
+</script>
+<script>
+    var audio = new Audio('../resources/audio/audio_test.mp3');
+audio.play();
+</script>
